@@ -39,7 +39,7 @@ namespace Fall2020_CSC403_Project
       this.chest_slot = new System.Windows.Forms.PictureBox();
       this.head_slot = new System.Windows.Forms.PictureBox();
       this.button1 = new System.Windows.Forms.Button();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.imageList1 = new System.Windows.Forms.ImageList(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.inventory_slot_16 = new System.Windows.Forms.PictureBox();
       this.inventory_slot_15 = new System.Windows.Forms.PictureBox();
@@ -58,7 +58,6 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_2 = new System.Windows.Forms.PictureBox();
       this.inventory_slot_1 = new System.Windows.Forms.PictureBox();
       this.InventorySlotImgs = new System.Windows.Forms.ImageList(this.components);
-      this.imageList1 = new System.Windows.Forms.ImageList(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -69,7 +68,6 @@ namespace Fall2020_CSC403_Project
       ((System.ComponentModel.ISupportInitialize)(this.legs_slot)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chest_slot)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.head_slot)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_16)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_15)).BeginInit();
@@ -114,7 +112,6 @@ namespace Fall2020_CSC403_Project
       this.splitContainer1.Panel2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.inventory_background;
       this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
       this.splitContainer1.Panel2.Controls.Add(this.button1);
-      this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
       this.splitContainer1.Panel2.Controls.Add(this.panel1);
       this.splitContainer1.Size = new System.Drawing.Size(800, 450);
       this.splitContainer1.SplitterDistance = 266;
@@ -211,28 +208,20 @@ namespace Fall2020_CSC403_Project
       this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       this.button1.ForeColor = System.Drawing.Color.Black;
       this.button1.ImageList = this.imageList1;
-      this.button1.Location = new System.Drawing.Point(31, 199);
+      this.button1.Location = new System.Drawing.Point(17, 48);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(64, 64);
       this.button1.TabIndex = 16;
       this.button1.UseVisualStyleBackColor = false;
       this.button1.DragDrop += new System.Windows.Forms.DragEventHandler(this.button1_DragDrop);
       // 
-      // pictureBox1
+      // imageList1
       // 
-      this.pictureBox1.AllowDrop = true;
-      this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-      this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-      this.pictureBox1.Location = new System.Drawing.Point(8, 81);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(8);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
-      this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.pictureBox1.TabIndex = 17;
-      this.pictureBox1.TabStop = false;
+      this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+      this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+      this.imageList1.Images.SetKeyName(0, "empty.png");
+      this.imageList1.Images.SetKeyName(1, "cane.png");
+      this.imageList1.Images.SetKeyName(2, "flamin_hot_blades.png");
       // 
       // panel1
       // 
@@ -547,14 +536,6 @@ namespace Fall2020_CSC403_Project
       this.InventorySlotImgs.Images.SetKeyName(5, "weapon_slot.png");
       this.InventorySlotImgs.Images.SetKeyName(6, "shield_slot.png");
       // 
-      // imageList1
-      // 
-      this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-      this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-      this.imageList1.Images.SetKeyName(0, "empty.png");
-      this.imageList1.Images.SetKeyName(1, "cane.png");
-      this.imageList1.Images.SetKeyName(2, "flamin_hot_blades.png");
-      // 
       // FrmInventory
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,7 +559,6 @@ namespace Fall2020_CSC403_Project
       ((System.ComponentModel.ISupportInitialize)(this.legs_slot)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chest_slot)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.head_slot)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_16)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_15)).EndInit();
@@ -627,7 +607,6 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox inventory_slot_2;
     private System.Windows.Forms.ImageList InventorySlotImgs;
     private System.Windows.Forms.ImageList imageList1;
-    public System.Windows.Forms.PictureBox pictureBox1;
     public System.Windows.Forms.PictureBox inventory_slot_1;
     public System.Windows.Forms.Button button1;
   }

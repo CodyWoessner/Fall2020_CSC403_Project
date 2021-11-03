@@ -20,11 +20,11 @@ namespace Fall2020_CSC403_Project
         }
     private void FrmInventory_Load(object sender, EventArgs e)
     {
-      const int NUM_ITEMS = 3;
+      /*const int NUM_ITEMS = 3;
       itemList = new Item[NUM_ITEMS];
       itemList[0] = new Item("empty", "nothing", global::Fall2020_CSC403_Project.Properties.Resources.empty, "nada");
       itemList[1] = new Weapon("peanut_cane", "Mr. Peanut's Cane", global::Fall2020_CSC403_Project.Properties.Resources.cane, "A crude bludgeoning weopon.");
-      itemList[2] = new Weapon("cheeto_knives", "Flamin' Hot Blades", global::Fall2020_CSC403_Project.Properties.Resources.flamin_hot_blades, "Hot to the touch.");
+      itemList[2] = new Weapon("cheeto_knives", "Flamin' Hot Blades", global::Fall2020_CSC403_Project.Properties.Resources.flamin_hot_blades, "Hot to the touch.");*/
     }
       private void head_slot_Click(object sender, EventArgs e)
     {
@@ -72,7 +72,7 @@ namespace Fall2020_CSC403_Project
 
     private void button1_DragDrop(object sender, DragEventArgs e)
     {
-      this.
+      
     }
   }
 }
