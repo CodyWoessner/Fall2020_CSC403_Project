@@ -118,25 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="weapon_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\weapon_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="battle_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\battle_screen.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="enemy_cheetos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\enemy_cheetos.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="enemy_koolaid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\enemy_koolaid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="enemy_poisonpacket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\enemy_poisonpacket.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="final_battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\final_battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="helmet_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\helmet_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pants_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\pants_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flamin_hot_blades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\flamin_hot_blades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="armor_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\armor_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\cane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boots_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\boots_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\inventory_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\inventory_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_cheetos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\enemy_cheetos.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shield_slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\shield_slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_poisonpacket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\enemy_poisonpacket.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
