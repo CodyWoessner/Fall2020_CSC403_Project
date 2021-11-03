@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventory.Designer.cs">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventory.resx">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel.resx">
       <DependentUpon>FrmLevel.cs</DependentUpon>
@@ -113,13 +122,54 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
       <Project>{F1E60F80-1868-4FE5-991B-FDDCFAF9B16B}</Project>
       <Name>MyGameLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\inventory_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\helmet_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\armor_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\pants_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\boots_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\weapon_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shield_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\inventory_slot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\item_imgs\flamin_hot_blades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\flamin_hot_blades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flamin_hot_blades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\item_imgs\empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\item_imgs\cane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\inventory_imgs\inventory_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
