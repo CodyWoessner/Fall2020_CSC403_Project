@@ -24,7 +24,9 @@
     /// </summary>
     private void InitializeComponent() {
       this.components = new System.ComponentModel.Container();
-      this.btnAttack = new System.Windows.Forms.Button();
+      this.btnAttack1 = new System.Windows.Forms.Button();
+      this.btnAttack2 = new System.Windows.Forms.Button();
+      this.btnAttack3 = new System.Windows.Forms.Button();
       this.lblPlayerHealthFull = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
@@ -38,16 +40,38 @@
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
       this.SuspendLayout();
       // 
-      // btnAttack
+      // btnAtk_Slash
       // 
-      this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAttack.Location = new System.Drawing.Point(127, 422);
-      this.btnAttack.Name = "btnAttack";
-      this.btnAttack.Size = new System.Drawing.Size(128, 43);
-      this.btnAttack.TabIndex = 2;
-      this.btnAttack.Text = "Attack";
-      this.btnAttack.UseVisualStyleBackColor = true;
-      this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
+      this.btnAttack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAttack1.Location = new System.Drawing.Point(127, 422);
+      this.btnAttack1.Name = "btnAtk_Slash";
+      this.btnAttack1.Size = new System.Drawing.Size(128, 43);
+      this.btnAttack1.TabIndex = 2;
+      this.btnAttack1.Text = "Slash";
+      this.btnAttack1.UseVisualStyleBackColor = true;
+      this.btnAttack1.Click += new System.EventHandler(this.btnAtk_Slash);
+      // 
+      // btnAtk_RiskyHit
+      // 
+      this.btnAttack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAttack2.Location = new System.Drawing.Point(327, 422);
+      this.btnAttack2.Name = "btnAtk_RiskyHit";
+      this.btnAttack2.Size = new System.Drawing.Size(128, 43);
+      this.btnAttack2.TabIndex = 0;
+      this.btnAttack2.Text = "RiskyHit";
+      this.btnAttack2.UseVisualStyleBackColor = true;
+      this.btnAttack2.Click += new System.EventHandler(this.btnAtk_RiskyHit);
+      // 
+      // btnAtk_Dodge
+      // 
+      this.btnAttack3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAttack3.Location = new System.Drawing.Point(527, 422);
+      this.btnAttack3.Name = "btnAtk_Dodge";
+      this.btnAttack3.Size = new System.Drawing.Size(128, 43);
+      this.btnAttack3.TabIndex = 0;
+      this.btnAttack3.Text = "Dodge";
+      this.btnAttack3.UseVisualStyleBackColor = true;
+      this.btnAttack3.Click += new System.EventHandler(this.btnAtk_Dodge);
       // 
       // lblPlayerHealthFull
       // 
@@ -139,7 +163,9 @@
       this.Controls.Add(this.label2);
       this.Controls.Add(this.lblPlayerHealthFull);
       this.Controls.Add(this.label1);
-      this.Controls.Add(this.btnAttack);
+      this.Controls.Add(this.btnAttack1);
+      this.Controls.Add(this.btnAttack2);
+      this.Controls.Add(this.btnAttack3);
       this.Controls.Add(this.picEnemy);
       this.Controls.Add(this.picPlayer);
       this.DoubleBuffered = true;
@@ -157,10 +183,13 @@
 
     private System.Windows.Forms.PictureBox picPlayer;
     private System.Windows.Forms.PictureBox picEnemy;
-    private System.Windows.Forms.Button btnAttack;
+    private System.Windows.Forms.Button btnAttack1;
+    private System.Windows.Forms.Button btnAttack2;
+    private System.Windows.Forms.Button btnAttack3;
     private System.Windows.Forms.Label lblPlayerHealthFull;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label lblEnemyHealthFull;
     private System.Windows.Forms.PictureBox picBossBattle;
     private System.Windows.Forms.Timer tmrFinalBattle;
