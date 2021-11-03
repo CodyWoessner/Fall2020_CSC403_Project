@@ -63,14 +63,50 @@ namespace Fall2020_CSC403_Project {
       lblEnemyHealthFull.Text = enemy.Health.ToString();
     }
 
-    private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
+    // button attacks start here.
+
+    // Attack Slash
+    private void btnAtk_Slash(object sender, EventArgs e) {
+      player.OnAttack(-2);
       if (enemy.Health > 0) {
         enemy.OnAttack(-2);
       }
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
+        instance = null;
+        Close();
+      }
+    }
+
+    //Attack RiskyHit
+    private void btnAtk_RiskyHit(object sender, EventArgs e)
+    {
+      player.OnAttack(-4);
+      if (enemy.Health > 0)
+      {
+        enemy.OnAttack(-3);
+      }
+
+      UpdateHealthBars();
+      if (player.Health <= 0 || enemy.Health <= 0)
+      {
+        instance = null;
+        Close();
+      }
+    }
+
+    //Attack Dodge
+    private void btnAtk_Dodge(object sender, EventArgs e)
+    {
+      if (enemy.Health > 0)
+      {
+        enemy.OnAttack(-2);
+      }
+
+      UpdateHealthBars();
+      if (player.Health <= 0 || enemy.Health <= 0)
+      {
         instance = null;
         Close();
       }

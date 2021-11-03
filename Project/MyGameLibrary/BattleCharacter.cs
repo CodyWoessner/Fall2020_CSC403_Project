@@ -31,6 +31,7 @@ namespace Fall2020_CSC403_Project.code {
 
     public void OnAttack(int amount) {
       AttackEvent((int)(amount * strength));
+      // get weapon effect
     }
 
     public void AlterHealth(int amount) {
