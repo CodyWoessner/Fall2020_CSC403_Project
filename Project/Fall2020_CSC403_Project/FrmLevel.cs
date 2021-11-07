@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
@@ -18,7 +19,7 @@ namespace Fall2020_CSC403_Project {
     public FrmLevel() {
       InitializeComponent();
     }
-
+    
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;

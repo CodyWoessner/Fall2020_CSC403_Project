@@ -171,5 +171,14 @@
   <ItemGroup>
     <None Include="data\inventory_imgs\inventory_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\picScript0.png" />
+    <Content Include="data\picScript1.png" />
+    <Content Include="data\picScript2.png" />
+    <Content Include="data\picScript3.png" />
+    <Content Include="data\picScript4.png" />
+    <Content Include="data\picScript5.png" />
+    <Content Include="data\picScriptbgd.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
