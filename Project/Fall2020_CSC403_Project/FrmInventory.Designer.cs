@@ -1,34 +1,34 @@
 ﻿
 namespace Fall2020_CSC403_Project
 {
-    partial class FrmInventory
+  partial class FrmInventory
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventory));
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -513,7 +513,6 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
       this.inventory_slot_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.inventory_slot_1.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.inventory_slot_1.Image = ((System.Drawing.Image)(resources.GetObject("inventory_slot_1.Image")));
       this.inventory_slot_1.Location = new System.Drawing.Point(16, 16);
       this.inventory_slot_1.Margin = new System.Windows.Forms.Padding(8);
       this.inventory_slot_1.Name = "inventory_slot_1";
@@ -522,7 +521,9 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_1.TabIndex = 0;
       this.inventory_slot_1.TabStop = false;
+      this.inventory_slot_1.Tag = "0";
       this.inventory_slot_1.DragDrop += new System.Windows.Forms.DragEventHandler(this.inventory_slot_1_DragDrop);
+      this.inventory_slot_1.DoubleClick += new System.EventHandler(this.inventory_slot_1_DoubleClick);
       // 
       // InventorySlotImgs
       // 
@@ -578,33 +579,33 @@ namespace Fall2020_CSC403_Project
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_1)).EndInit();
       this.ResumeLayout(false);
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.PictureBox head_slot;
-        private System.Windows.Forms.PictureBox feet_slot;
-        private System.Windows.Forms.PictureBox weapon_slot;
-        private System.Windows.Forms.PictureBox shield_slot;
-        private System.Windows.Forms.PictureBox legs_slot;
-        private System.Windows.Forms.PictureBox chest_slot;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox inventory_slot_16;
-        private System.Windows.Forms.PictureBox inventory_slot_15;
-        private System.Windows.Forms.PictureBox inventory_slot_14;
-        private System.Windows.Forms.PictureBox inventory_slot_13;
-        private System.Windows.Forms.PictureBox inventory_slot_12;
-        private System.Windows.Forms.PictureBox inventory_slot_11;
-        private System.Windows.Forms.PictureBox inventory_slot_10;
-        private System.Windows.Forms.PictureBox inventory_slot_9;
-        private System.Windows.Forms.PictureBox inventory_slot_8;
-        private System.Windows.Forms.PictureBox inventory_slot_7;
-        private System.Windows.Forms.PictureBox inventory_slot_6;
-        private System.Windows.Forms.PictureBox inventory_slot_5;
-        private System.Windows.Forms.PictureBox inventory_slot_4;
-        private System.Windows.Forms.PictureBox inventory_slot_3;
-        private System.Windows.Forms.PictureBox inventory_slot_2;
+    private System.Windows.Forms.SplitContainer splitContainer1;
+    private System.Windows.Forms.PictureBox head_slot;
+    private System.Windows.Forms.PictureBox feet_slot;
+    private System.Windows.Forms.PictureBox weapon_slot;
+    private System.Windows.Forms.PictureBox shield_slot;
+    private System.Windows.Forms.PictureBox legs_slot;
+    private System.Windows.Forms.PictureBox chest_slot;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.PictureBox inventory_slot_16;
+    private System.Windows.Forms.PictureBox inventory_slot_15;
+    private System.Windows.Forms.PictureBox inventory_slot_14;
+    private System.Windows.Forms.PictureBox inventory_slot_13;
+    private System.Windows.Forms.PictureBox inventory_slot_12;
+    private System.Windows.Forms.PictureBox inventory_slot_11;
+    private System.Windows.Forms.PictureBox inventory_slot_10;
+    private System.Windows.Forms.PictureBox inventory_slot_9;
+    private System.Windows.Forms.PictureBox inventory_slot_8;
+    private System.Windows.Forms.PictureBox inventory_slot_7;
+    private System.Windows.Forms.PictureBox inventory_slot_6;
+    private System.Windows.Forms.PictureBox inventory_slot_5;
+    private System.Windows.Forms.PictureBox inventory_slot_4;
+    private System.Windows.Forms.PictureBox inventory_slot_3;
+    private System.Windows.Forms.PictureBox inventory_slot_2;
     private System.Windows.Forms.ImageList InventorySlotImgs;
     private System.Windows.Forms.ImageList imageList1;
     public System.Windows.Forms.PictureBox inventory_slot_1;

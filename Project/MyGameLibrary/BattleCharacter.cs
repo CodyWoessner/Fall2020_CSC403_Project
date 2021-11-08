@@ -38,31 +38,25 @@ namespace Fall2020_CSC403_Project.code {
       Health += amount;
     }
 
-    public void InventoryAddItem(Item item)
+    public void AddItem(Item item)
     {
-      if(InventoryIsFull(Inventory) == false)
+      int destIndex;
+      if (InventoryIsFull(Inventory) == false)
       {
-
+        destIndex = FirstEmptySlot(Inventory);
+        Inventory[destIndex] = item;
       }
     }
 
-    public void InventoryRemoveItem(Item item)
+    public void DeleteItem(int itemIndex)
     {
       if (InventoryIsEmpty(Inventory) == false)
       {
-
+        //Inventory[itemIndex] = Fall2020_CSC403_Project.code.
       }
     }
 
-    public void EquipmentAddItem(Item item)
-    {
-      if (InventoryIsFull(Equipment) == false)
-      {
-
-      }
-    }
-
-    public void EquipmentRemoveItem(Item item)
+    public void DropItem(Item item)
     {
       if (InventoryIsEmpty(Equipment) == false)
       {
@@ -70,28 +64,112 @@ namespace Fall2020_CSC403_Project.code {
       }
     }
 
-    private bool InventoryIsFull(Item [] inv)
+    public void EquipItem(Item inputItem, int sourceIndex)
     {
-      bool isFull = false;
-      int invLastSlot = inv.GetUpperBound(0);
+      Item tempItem;
+      int destIndex;
+      if (inputItem.ItemType == "helmet")
+      {
+        destIndex = 0;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      if (inputItem.ItemType == "weapon")
+      {
+        destIndex = 1;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      if (inputItem.ItemType == "chest")
+      {
+        destIndex = 2;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      if (inputItem.ItemType == "shield")
+      {
+        destIndex = 3;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      if (inputItem.ItemType == "legs")
+      {
+        destIndex = 4;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      if (inputItem.ItemType == "feet")
+      {
+        destIndex = 5;
+        tempItem = Equipment[destIndex];
+        Equipment[destIndex] = inputItem;
+        Inventory[sourceIndex] = tempItem;
+      }
+      else
+      {
+
+      }
+    }
+
+
+
+    private bool InventoryIsFull(Item[] inv)
+    {
+      bool isFull = true;
+      /*int invLastSlot = inv.GetUpperBound(0);
 
       if(inv[invLastSlot].ItemID != "empty")
       {
         isFull = true;
+      }*/
+      foreach (Item i in inv)
+      {
+        if (i.ItemID == "empty")
+        {
+          isFull = false;
+          break;
+        }
       }
       return isFull;
     }
 
-    private bool InventoryIsEmpty(Item [] inv)
+    private bool InventoryIsEmpty(Item[] inv)
     {
-      bool isEmpty = false;
-      int invFirstSlot = inv.GetLowerBound(0);
+      bool isEmpty = true;
+      /*int invFirstSlot = inv.GetLowerBound(0);
 
       if (inv[invFirstSlot].ItemID == "empty")
       {
         isEmpty = true;
+      }*/
+      foreach (Item i in inv)
+      {
+        if (i.ItemID != "empty")
+        {
+          isEmpty = false;
+          break;
+        }
       }
       return isEmpty;
+    }
+
+    private int FirstEmptySlot(Item[] inv)
+    {
+      int index = inv.GetLowerBound(0);
+      for (int i = inv.GetLowerBound(0); i <= inv.GetUpperBound(0); i++)
+      {
+        if (inv[i].ItemID == "empty")
+        {
+          index = i;
+          break;
+        }
+      }
+      return index;
     }
   }
 }
