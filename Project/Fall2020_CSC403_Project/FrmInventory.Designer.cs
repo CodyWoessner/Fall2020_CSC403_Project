@@ -1,45 +1,46 @@
 ﻿
 namespace Fall2020_CSC403_Project
 {
-  partial class FrmInventory
-  {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class FrmInventory
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    #region Windows Form Designer generated code
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent()
-    {
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventory));
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+      this.InventorySlotImgs = new System.Windows.Forms.ImageList(this.components);
+      this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
       this.feet_slot = new System.Windows.Forms.PictureBox();
       this.weapon_slot = new System.Windows.Forms.PictureBox();
       this.shield_slot = new System.Windows.Forms.PictureBox();
       this.legs_slot = new System.Windows.Forms.PictureBox();
       this.chest_slot = new System.Windows.Forms.PictureBox();
       this.head_slot = new System.Windows.Forms.PictureBox();
-      this.button1 = new System.Windows.Forms.Button();
-      this.imageList1 = new System.Windows.Forms.ImageList(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.inventory_slot_16 = new System.Windows.Forms.PictureBox();
       this.inventory_slot_15 = new System.Windows.Forms.PictureBox();
@@ -57,7 +58,6 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_3 = new System.Windows.Forms.PictureBox();
       this.inventory_slot_2 = new System.Windows.Forms.PictureBox();
       this.inventory_slot_1 = new System.Windows.Forms.PictureBox();
-      this.InventorySlotImgs = new System.Windows.Forms.ImageList(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -111,11 +111,40 @@ namespace Fall2020_CSC403_Project
       this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
       this.splitContainer1.Panel2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.inventory_background;
       this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.splitContainer1.Panel2.Controls.Add(this.button1);
       this.splitContainer1.Panel2.Controls.Add(this.panel1);
       this.splitContainer1.Size = new System.Drawing.Size(800, 450);
       this.splitContainer1.SplitterDistance = 266;
       this.splitContainer1.TabIndex = 0;
+      // 
+      // imageList1
+      // 
+      this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+      this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+      this.imageList1.Images.SetKeyName(0, "empty.png");
+      this.imageList1.Images.SetKeyName(1, "cane.png");
+      this.imageList1.Images.SetKeyName(2, "flamin_hot_blades.png");
+      // 
+      // InventorySlotImgs
+      // 
+      this.InventorySlotImgs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("InventorySlotImgs.ImageStream")));
+      this.InventorySlotImgs.TransparentColor = System.Drawing.Color.Transparent;
+      this.InventorySlotImgs.Images.SetKeyName(0, "inventory_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(1, "helmet_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(2, "armor_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(3, "pants_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(4, "boots_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(5, "weapon_slot.png");
+      this.InventorySlotImgs.Images.SetKeyName(6, "shield_slot.png");
+      // 
+      // toolTip1
+      // 
+      this.toolTip1.AutoPopDelay = 20000;
+      this.toolTip1.InitialDelay = 0;
+      this.toolTip1.OwnerDraw = true;
+      this.toolTip1.ReshowDelay = 0;
+      this.toolTip1.ShowAlways = true;
+      this.toolTip1.ToolTipTitle = "Item1";
+      this.toolTip1.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.toolTip1_Draw);
       // 
       // feet_slot
       // 
@@ -126,9 +155,10 @@ namespace Fall2020_CSC403_Project
       this.feet_slot.Margin = new System.Windows.Forms.Padding(8);
       this.feet_slot.Name = "feet_slot";
       this.feet_slot.Size = new System.Drawing.Size(64, 64);
-      this.feet_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.feet_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.feet_slot.TabIndex = 5;
       this.feet_slot.TabStop = false;
+      this.feet_slot.DoubleClick += new System.EventHandler(this.feet_slot_DoubleClick);
       // 
       // weapon_slot
       // 
@@ -139,10 +169,10 @@ namespace Fall2020_CSC403_Project
       this.weapon_slot.Margin = new System.Windows.Forms.Padding(8);
       this.weapon_slot.Name = "weapon_slot";
       this.weapon_slot.Size = new System.Drawing.Size(64, 64);
-      this.weapon_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.weapon_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.weapon_slot.TabIndex = 4;
       this.weapon_slot.TabStop = false;
-      this.weapon_slot.DragDrop += new System.Windows.Forms.DragEventHandler(this.weapon_slot_DragDrop);
+      this.weapon_slot.DoubleClick += new System.EventHandler(this.weapon_slot_DoubleClick);
       // 
       // shield_slot
       // 
@@ -153,10 +183,11 @@ namespace Fall2020_CSC403_Project
       this.shield_slot.Margin = new System.Windows.Forms.Padding(8);
       this.shield_slot.Name = "shield_slot";
       this.shield_slot.Size = new System.Drawing.Size(64, 64);
-      this.shield_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.shield_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.shield_slot.TabIndex = 3;
       this.shield_slot.TabStop = false;
       this.shield_slot.Click += new System.EventHandler(this.shield_slot_Click);
+      this.shield_slot.DoubleClick += new System.EventHandler(this.shield_slot_DoubleClick);
       // 
       // legs_slot
       // 
@@ -167,10 +198,11 @@ namespace Fall2020_CSC403_Project
       this.legs_slot.Margin = new System.Windows.Forms.Padding(8);
       this.legs_slot.Name = "legs_slot";
       this.legs_slot.Size = new System.Drawing.Size(64, 64);
-      this.legs_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.legs_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.legs_slot.TabIndex = 2;
       this.legs_slot.TabStop = false;
       this.legs_slot.Click += new System.EventHandler(this.legs_slot_Click);
+      this.legs_slot.DoubleClick += new System.EventHandler(this.legs_slot_DoubleClick);
       // 
       // chest_slot
       // 
@@ -181,9 +213,10 @@ namespace Fall2020_CSC403_Project
       this.chest_slot.Margin = new System.Windows.Forms.Padding(8);
       this.chest_slot.Name = "chest_slot";
       this.chest_slot.Size = new System.Drawing.Size(64, 64);
-      this.chest_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.chest_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.chest_slot.TabIndex = 1;
       this.chest_slot.TabStop = false;
+      this.chest_slot.DoubleClick += new System.EventHandler(this.chest_slot_DoubleClick);
       // 
       // head_slot
       // 
@@ -194,34 +227,10 @@ namespace Fall2020_CSC403_Project
       this.head_slot.Margin = new System.Windows.Forms.Padding(8);
       this.head_slot.Name = "head_slot";
       this.head_slot.Size = new System.Drawing.Size(64, 64);
-      this.head_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.head_slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.head_slot.TabIndex = 0;
       this.head_slot.TabStop = false;
-      // 
-      // button1
-      // 
-      this.button1.AllowDrop = true;
-      this.button1.BackColor = System.Drawing.Color.Transparent;
-      this.button1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.inventory_slot;
-      this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-      this.button1.ForeColor = System.Drawing.Color.Black;
-      this.button1.ImageList = this.imageList1;
-      this.button1.Location = new System.Drawing.Point(17, 48);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(64, 64);
-      this.button1.TabIndex = 16;
-      this.button1.UseVisualStyleBackColor = false;
-      this.button1.DragDrop += new System.Windows.Forms.DragEventHandler(this.button1_DragDrop);
-      // 
-      // imageList1
-      // 
-      this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-      this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-      this.imageList1.Images.SetKeyName(0, "empty.png");
-      this.imageList1.Images.SetKeyName(1, "cane.png");
-      this.imageList1.Images.SetKeyName(2, "flamin_hot_blades.png");
+      this.head_slot.DoubleClick += new System.EventHandler(this.head_slot_DoubleClick);
       // 
       // panel1
       // 
@@ -252,7 +261,6 @@ namespace Fall2020_CSC403_Project
       // 
       // inventory_slot_16
       // 
-      this.inventory_slot_16.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_16.AllowDrop = true;
       this.inventory_slot_16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_16.BackgroundImage")));
       this.inventory_slot_16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -266,10 +274,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_16.TabIndex = 15;
       this.inventory_slot_16.TabStop = false;
+      this.inventory_slot_16.DoubleClick += new System.EventHandler(this.inventory_slot_16_DoubleClick);
       // 
       // inventory_slot_15
       // 
-      this.inventory_slot_15.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_15.AllowDrop = true;
       this.inventory_slot_15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_15.BackgroundImage")));
       this.inventory_slot_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -283,10 +291,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_15.TabIndex = 14;
       this.inventory_slot_15.TabStop = false;
+      this.inventory_slot_15.DoubleClick += new System.EventHandler(this.inventory_slot_15_DoubleClick);
       // 
       // inventory_slot_14
       // 
-      this.inventory_slot_14.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_14.AllowDrop = true;
       this.inventory_slot_14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_14.BackgroundImage")));
       this.inventory_slot_14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -300,10 +308,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_14.TabIndex = 13;
       this.inventory_slot_14.TabStop = false;
+      this.inventory_slot_14.DoubleClick += new System.EventHandler(this.inventory_slot_14_DoubleClick);
       // 
       // inventory_slot_13
       // 
-      this.inventory_slot_13.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_13.AllowDrop = true;
       this.inventory_slot_13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_13.BackgroundImage")));
       this.inventory_slot_13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -317,10 +325,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_13.TabIndex = 12;
       this.inventory_slot_13.TabStop = false;
+      this.inventory_slot_13.DoubleClick += new System.EventHandler(this.inventory_slot_13_DoubleClick);
       // 
       // inventory_slot_12
       // 
-      this.inventory_slot_12.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_12.AllowDrop = true;
       this.inventory_slot_12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_12.BackgroundImage")));
       this.inventory_slot_12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -334,10 +342,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_12.TabIndex = 11;
       this.inventory_slot_12.TabStop = false;
+      this.inventory_slot_12.DoubleClick += new System.EventHandler(this.inventory_slot_12_DoubleClick);
       // 
       // inventory_slot_11
       // 
-      this.inventory_slot_11.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_11.AllowDrop = true;
       this.inventory_slot_11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_11.BackgroundImage")));
       this.inventory_slot_11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -351,10 +359,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_11.TabIndex = 10;
       this.inventory_slot_11.TabStop = false;
+      this.inventory_slot_11.DoubleClick += new System.EventHandler(this.inventory_slot_11_DoubleClick);
       // 
       // inventory_slot_10
       // 
-      this.inventory_slot_10.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_10.AllowDrop = true;
       this.inventory_slot_10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_10.BackgroundImage")));
       this.inventory_slot_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -368,10 +376,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_10.TabIndex = 9;
       this.inventory_slot_10.TabStop = false;
+      this.inventory_slot_10.DoubleClick += new System.EventHandler(this.inventory_slot_10_DoubleClick);
       // 
       // inventory_slot_9
       // 
-      this.inventory_slot_9.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_9.AllowDrop = true;
       this.inventory_slot_9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_9.BackgroundImage")));
       this.inventory_slot_9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -385,10 +393,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_9.TabIndex = 8;
       this.inventory_slot_9.TabStop = false;
+      this.inventory_slot_9.DoubleClick += new System.EventHandler(this.inventory_slot_9_DoubleClick);
       // 
       // inventory_slot_8
       // 
-      this.inventory_slot_8.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_8.AllowDrop = true;
       this.inventory_slot_8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_8.BackgroundImage")));
       this.inventory_slot_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -402,10 +410,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_8.TabIndex = 7;
       this.inventory_slot_8.TabStop = false;
+      this.inventory_slot_8.DoubleClick += new System.EventHandler(this.inventory_slot_8_DoubleClick);
       // 
       // inventory_slot_7
       // 
-      this.inventory_slot_7.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_7.AllowDrop = true;
       this.inventory_slot_7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_7.BackgroundImage")));
       this.inventory_slot_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -419,10 +427,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_7.TabIndex = 6;
       this.inventory_slot_7.TabStop = false;
+      this.inventory_slot_7.DoubleClick += new System.EventHandler(this.inventory_slot_7_DoubleClick);
       // 
       // inventory_slot_6
       // 
-      this.inventory_slot_6.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_6.AllowDrop = true;
       this.inventory_slot_6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_6.BackgroundImage")));
       this.inventory_slot_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -436,11 +444,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_6.TabIndex = 5;
       this.inventory_slot_6.TabStop = false;
-      this.inventory_slot_6.Click += new System.EventHandler(this.pictureBox12_Click);
+      this.inventory_slot_6.DoubleClick += new System.EventHandler(this.inventory_slot_6_DoubleClick);
       // 
       // inventory_slot_5
       // 
-      this.inventory_slot_5.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_5.AllowDrop = true;
       this.inventory_slot_5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_5.BackgroundImage")));
       this.inventory_slot_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -454,10 +461,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_5.TabIndex = 4;
       this.inventory_slot_5.TabStop = false;
+      this.inventory_slot_5.DoubleClick += new System.EventHandler(this.inventory_slot_5_DoubleClick);
       // 
       // inventory_slot_4
       // 
-      this.inventory_slot_4.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_4.AllowDrop = true;
       this.inventory_slot_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_4.BackgroundImage")));
       this.inventory_slot_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -471,10 +478,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_4.TabIndex = 3;
       this.inventory_slot_4.TabStop = false;
+      this.inventory_slot_4.DoubleClick += new System.EventHandler(this.inventory_slot_4_DoubleClick);
       // 
       // inventory_slot_3
       // 
-      this.inventory_slot_3.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_3.AllowDrop = true;
       this.inventory_slot_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_3.BackgroundImage")));
       this.inventory_slot_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -488,10 +495,10 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_3.TabIndex = 2;
       this.inventory_slot_3.TabStop = false;
+      this.inventory_slot_3.DoubleClick += new System.EventHandler(this.inventory_slot_3_DoubleClick);
       // 
       // inventory_slot_2
       // 
-      this.inventory_slot_2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
       this.inventory_slot_2.AllowDrop = true;
       this.inventory_slot_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventory_slot_2.BackgroundImage")));
       this.inventory_slot_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -505,6 +512,7 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_2.TabIndex = 1;
       this.inventory_slot_2.TabStop = false;
+      this.inventory_slot_2.DoubleClick += new System.EventHandler(this.inventory_slot_2_DoubleClick);
       // 
       // inventory_slot_1
       // 
@@ -521,21 +529,8 @@ namespace Fall2020_CSC403_Project
       this.inventory_slot_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.inventory_slot_1.TabIndex = 0;
       this.inventory_slot_1.TabStop = false;
-      this.inventory_slot_1.Tag = "0";
-      this.inventory_slot_1.DragDrop += new System.Windows.Forms.DragEventHandler(this.inventory_slot_1_DragDrop);
       this.inventory_slot_1.DoubleClick += new System.EventHandler(this.inventory_slot_1_DoubleClick);
-      // 
-      // InventorySlotImgs
-      // 
-      this.InventorySlotImgs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("InventorySlotImgs.ImageStream")));
-      this.InventorySlotImgs.TransparentColor = System.Drawing.Color.Transparent;
-      this.InventorySlotImgs.Images.SetKeyName(0, "inventory_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(1, "helmet_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(2, "armor_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(3, "pants_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(4, "boots_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(5, "weapon_slot.png");
-      this.InventorySlotImgs.Images.SetKeyName(6, "shield_slot.png");
+      this.inventory_slot_1.MouseHover += new System.EventHandler(this.inventory_slot_1_MouseHover);
       // 
       // FrmInventory
       // 
@@ -550,7 +545,6 @@ namespace Fall2020_CSC403_Project
       this.Text = "Inventory";
       this.Load += new System.EventHandler(this.FrmInventory_Load);
       this.splitContainer1.Panel1.ResumeLayout(false);
-      this.splitContainer1.Panel1.PerformLayout();
       this.splitContainer1.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
@@ -579,36 +573,36 @@ namespace Fall2020_CSC403_Project
       ((System.ComponentModel.ISupportInitialize)(this.inventory_slot_1)).EndInit();
       this.ResumeLayout(false);
 
-    }
+        }
 
-    #endregion
+        #endregion
 
-    private System.Windows.Forms.SplitContainer splitContainer1;
-    private System.Windows.Forms.PictureBox head_slot;
-    private System.Windows.Forms.PictureBox feet_slot;
-    private System.Windows.Forms.PictureBox weapon_slot;
-    private System.Windows.Forms.PictureBox shield_slot;
-    private System.Windows.Forms.PictureBox legs_slot;
-    private System.Windows.Forms.PictureBox chest_slot;
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.PictureBox inventory_slot_16;
-    private System.Windows.Forms.PictureBox inventory_slot_15;
-    private System.Windows.Forms.PictureBox inventory_slot_14;
-    private System.Windows.Forms.PictureBox inventory_slot_13;
-    private System.Windows.Forms.PictureBox inventory_slot_12;
-    private System.Windows.Forms.PictureBox inventory_slot_11;
-    private System.Windows.Forms.PictureBox inventory_slot_10;
-    private System.Windows.Forms.PictureBox inventory_slot_9;
-    private System.Windows.Forms.PictureBox inventory_slot_8;
-    private System.Windows.Forms.PictureBox inventory_slot_7;
-    private System.Windows.Forms.PictureBox inventory_slot_6;
-    private System.Windows.Forms.PictureBox inventory_slot_5;
-    private System.Windows.Forms.PictureBox inventory_slot_4;
-    private System.Windows.Forms.PictureBox inventory_slot_3;
-    private System.Windows.Forms.PictureBox inventory_slot_2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.PictureBox head_slot;
+        private System.Windows.Forms.PictureBox feet_slot;
+        private System.Windows.Forms.PictureBox weapon_slot;
+        private System.Windows.Forms.PictureBox shield_slot;
+        private System.Windows.Forms.PictureBox legs_slot;
+        private System.Windows.Forms.PictureBox chest_slot;
+        private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.ImageList InventorySlotImgs;
     private System.Windows.Forms.ImageList imageList1;
     public System.Windows.Forms.PictureBox inventory_slot_1;
-    public System.Windows.Forms.Button button1;
+    public System.Windows.Forms.PictureBox inventory_slot_16;
+    public System.Windows.Forms.PictureBox inventory_slot_15;
+    public System.Windows.Forms.PictureBox inventory_slot_14;
+    public System.Windows.Forms.PictureBox inventory_slot_13;
+    public System.Windows.Forms.PictureBox inventory_slot_12;
+    public System.Windows.Forms.PictureBox inventory_slot_11;
+    public System.Windows.Forms.PictureBox inventory_slot_10;
+    public System.Windows.Forms.PictureBox inventory_slot_9;
+    public System.Windows.Forms.PictureBox inventory_slot_8;
+    public System.Windows.Forms.PictureBox inventory_slot_7;
+    public System.Windows.Forms.PictureBox inventory_slot_6;
+    public System.Windows.Forms.PictureBox inventory_slot_5;
+    public System.Windows.Forms.PictureBox inventory_slot_4;
+    public System.Windows.Forms.PictureBox inventory_slot_3;
+    public System.Windows.Forms.PictureBox inventory_slot_2;
+    public System.Windows.Forms.ToolTip toolTip1;
   }
 }

@@ -44,10 +44,42 @@ namespace Fall2020_CSC403_Project.code
     }
   }
 
-  public class Armor : Item
+  public class Chest : Item
   {
     // private ? ArmorAttribute;
-    public Armor(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "armor") : base(ItemID, ItemName, ItemImage, ItemDesc, "armor")
+    public Chest(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "chest") : base(ItemID, ItemName, ItemImage, ItemDesc, "chest")
+    {
+
+    }
+  }
+  public class Helmet : Item
+  {
+    // private ? HelmAttribute;
+    public Helmet(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "helmet") : base(ItemID, ItemName, ItemImage, ItemDesc, "helmet")
+    {
+
+    }
+  }
+  public class Shield : Item
+  {
+    // private ? ShieldAttribute;
+    public Shield(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "shield") : base(ItemID, ItemName, ItemImage, ItemDesc, "shield")
+    {
+
+    }
+  }
+  public class Legs : Item
+  {
+    // private ? LegsAttribute;
+    public Legs(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "legs") : base(ItemID, ItemName, ItemImage, ItemDesc, "legs")
+    {
+
+    }
+  }
+  public class Feet : Item
+  {
+    // private ? FeetAttribute;
+    public Feet(string ItemID, string ItemName, System.Drawing.Bitmap ItemImage, string ItemDesc, string ItemType = "feet") : base(ItemID, ItemName, ItemImage, ItemDesc, "feet")
     {
 
     }

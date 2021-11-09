@@ -49,6 +49,23 @@ namespace Fall2020_CSC403_Project
       inventory_slot_14.Image = player.Inventory[13].ItemImage;
       inventory_slot_15.Image = player.Inventory[14].ItemImage;
       inventory_slot_16.Image = player.Inventory[15].ItemImage;
+
+      this.toolTip1.SetToolTip(this.inventory_slot_1, player.Inventory[0].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_2, player.Inventory[1].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_3, player.Inventory[2].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_4, player.Inventory[3].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_5, player.Inventory[4].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_6, player.Inventory[5].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_7, player.Inventory[6].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_8, player.Inventory[7].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_9, player.Inventory[8].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_10, player.Inventory[9].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_11, player.Inventory[10].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_12, player.Inventory[11].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_13, player.Inventory[12].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_14, player.Inventory[13].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_15, player.Inventory[14].ItemDesc);
+      this.toolTip1.SetToolTip(this.inventory_slot_16, player.Inventory[15].ItemDesc);
     }
     /*    public static FrmInventory GetInstance()
         {
@@ -89,32 +106,158 @@ namespace Fall2020_CSC403_Project
 
     }
 
-    private void pictureBox12_Click(object sender, EventArgs e)
-    {
-
-    }
     private void inventory_slot_1_Click(object sender, EventArgs e)
     {
-
+      
     }
     private void inventory_slot_1_DoubleClick(object sender, EventArgs e)
     {
-      int invSlotIndex = (int)this.Tag;
+      int invSlotIndex = 0;
       player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
     }
-    private void inventory_slot_1_DragDrop(object sender, EventArgs e)
+    private void inventory_slot_2_DoubleClick(object sender, EventArgs e)
     {
-
+      int invSlotIndex = 1;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_3_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 2;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_4_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 3;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_5_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 4;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_6_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 5;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_7_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 6;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_8_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 7;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_9_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 8;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_10_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 9;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_11_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 10;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_12_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 11;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_13_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 12;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_14_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 13;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_15_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 14;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_16_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 15;
+      player.EquipItem(player.Inventory[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+    private void inventory_slot_1_MouseHover(object sender, EventArgs e)
+    {
+      
     }
 
-    private void weapon_slot_DragDrop(object sender, DragEventArgs e)
+    private void toolTip1_Draw(System.Object sender, System.Windows.Forms.DrawToolTipEventArgs e)
     {
-
+      e.DrawBackground();
+      e.DrawBorder();
+      e.DrawText();
     }
 
-    private void button1_DragDrop(object sender, DragEventArgs e)
+    private void weapon_slot_DoubleClick(object sender, EventArgs e)
     {
+      int invSlotIndex = 1;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
 
+    private void head_slot_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 0;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+
+    private void chest_slot_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 2;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+
+    private void shield_slot_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 3;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+
+    private void legs_slot_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 4;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
+    }
+
+    private void feet_slot_DoubleClick(object sender, EventArgs e)
+    {
+      int invSlotIndex = 5;
+      player.UnequipItem(player.Equipment[invSlotIndex], invSlotIndex);
+      UpdateInventory();
     }
   }
 }

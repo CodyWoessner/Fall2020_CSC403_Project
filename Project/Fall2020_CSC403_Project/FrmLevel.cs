@@ -28,7 +28,7 @@ namespace Fall2020_CSC403_Project
     {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
-      const int NUM_ITEMS = 3;
+      const int NUM_ITEMS = 32;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
@@ -45,17 +45,21 @@ namespace Fall2020_CSC403_Project
 
       itemList = new Item[NUM_ITEMS];
       itemList[0] = new Item("empty", "noName", global::Fall2020_CSC403_Project.Properties.Resources.empty, "noDesc");
-      itemList[1] = new Weapon("peanut_cane", "Mr. Peanut's Cane", global::Fall2020_CSC403_Project.Properties.Resources.cane, "A crude bludgeoning weopon.");
+      itemList[1] = new Weapon("peanut_cane", "Mr. Peanut's Cane", global::Fall2020_CSC403_Project.Properties.Resources.cane, "A crude bludgeoning weapon.");
       itemList[2] = new Weapon("cheeto_knives", "Flamin' Hot Blades", global::Fall2020_CSC403_Project.Properties.Resources.flamin_hot_blades, "Hot to the touch.");
+      itemList[3] = new Helmet("tophat", "Mr. Peanut's Top Hat", global::Fall2020_CSC403_Project.Properties.Resources.tophat, "A custom monogramed top hat.");
+      itemList[4] = new Feet("spats", "Mr. Peanut's Shoes", global::Fall2020_CSC403_Project.Properties.Resources.spats, "Some fancy spats.");
+      itemList[5] = new Chest("peanut_shell", "Mr. Peanut's Shell", global::Fall2020_CSC403_Project.Properties.Resources.shell, "Is it his skin or does he wear it?");
+      itemList[6] = new Legs("leggings", "Mr. Peanut's Leggings", global::Fall2020_CSC403_Project.Properties.Resources.leggings, "Form fitting.");
 
-      player.Equipment[0] = itemList[0];
+      player.Equipment[0] = itemList[3];
       player.Equipment[1] = itemList[2];
-      player.Equipment[2] = itemList[0];
+      player.Equipment[2] = itemList[5];
       player.Equipment[3] = itemList[0];
-      player.Equipment[4] = itemList[0];
-      player.Equipment[5] = itemList[0];
+      player.Equipment[4] = itemList[6];
+      player.Equipment[5] = itemList[4];
 
-      player.Inventory[0] = itemList[1];
+      player.Inventory[0] = itemList[0];
       player.Inventory[1] = itemList[0];
       player.Inventory[2] = itemList[0];
       player.Inventory[3] = itemList[0];
@@ -200,7 +204,7 @@ namespace Fall2020_CSC403_Project
 
     private void lblInGameTime_Click(object sender, EventArgs e)
     {
-
+      
     }
 
     private void inventoryButton_Click(object sender, EventArgs e)

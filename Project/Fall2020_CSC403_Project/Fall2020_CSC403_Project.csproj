@@ -172,6 +172,10 @@
     <None Include="data\inventory_imgs\inventory_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\item_imgs\spats.png" />
+    <None Include="data\item_imgs\tophat.png" />
+    <None Include="data\item_imgs\leggings.png" />
+    <None Include="data\item_imgs\shell.png" />
     <Content Include="data\picScript0.png" />
     <Content Include="data\picScript1.png" />
     <Content Include="data\picScript2.png" />

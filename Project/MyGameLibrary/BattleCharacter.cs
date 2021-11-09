@@ -13,7 +13,6 @@ namespace Fall2020_CSC403_Project.code {
     public Item [] Inventory { get; private set; }
     public Item [] Equipment { get; private set; }
     private float strength;
-    private int i = 0;
 
 
     public event Action<int> AttackEvent;
@@ -109,6 +108,22 @@ namespace Fall2020_CSC403_Project.code {
         tempItem = Equipment[destIndex];
         Equipment[destIndex] = inputItem;
         Inventory[sourceIndex] = tempItem;
+      }
+      else
+      {
+
+      }
+    }
+    public void UnequipItem(Item inputItem, int sourceIndex)
+    {
+      Item tempItem;
+      int destIndex;
+      if (InventoryIsFull(Inventory) == false)
+      {
+        destIndex = FirstEmptySlot(Inventory);
+        tempItem = Inventory[destIndex];
+        Inventory[destIndex] = Equipment[sourceIndex];
+        Equipment[sourceIndex] = tempItem;
       }
       else
       {

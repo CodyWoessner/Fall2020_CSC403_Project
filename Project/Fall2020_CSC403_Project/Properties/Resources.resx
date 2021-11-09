@@ -175,4 +175,16 @@
   <data name="inventory_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\inventory_imgs\inventory_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="leggings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\leggings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\shell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\spats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tophat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\item_imgs\tophat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
