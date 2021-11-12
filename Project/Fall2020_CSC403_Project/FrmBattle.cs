@@ -40,6 +40,7 @@ namespace Fall2020_CSC403_Project
             picEnemy.Refresh();
             BackColor = enemy.Color;
             picBossBattle.Visible = false;
+            btnMercy.Visible = false;
 
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
@@ -84,6 +85,11 @@ namespace Fall2020_CSC403_Project
 
             lblPlayerHealthFull.Text = player.Health.ToString();
             lblEnemyHealthFull.Text = enemy.Health.ToString();
+
+            if (enemy.Health == 10)
+            {
+                btnMercy.Visible = true;
+            }
         }
 
         // button attacks start here.
@@ -142,6 +148,20 @@ namespace Fall2020_CSC403_Project
             {
                 instance = null;
                 parentForm.enemyDefeated();
+                Close();
+            }
+        }
+        private void btnMercy_Mercy(object sender, EventArgs e)
+        {
+            if (player.Health <= 10)
+            {
+                enemy.OnAttack(+1);
+                instance = null;
+                Close();
+            }
+            else
+            {
+                instance = null;
                 Close();
             }
         }

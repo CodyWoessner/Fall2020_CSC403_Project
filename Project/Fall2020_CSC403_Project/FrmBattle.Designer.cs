@@ -27,6 +27,7 @@
             this.btnAttack1 = new System.Windows.Forms.Button();
             this.btnAttack2 = new System.Windows.Forms.Button();
             this.btnAttack3 = new System.Windows.Forms.Button();
+            this.btnMercy = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,6 +87,17 @@
             this.btnAttack3.Text = "Dodge";
             this.btnAttack3.UseVisualStyleBackColor = true;
             this.btnAttack3.Click += new System.EventHandler(this.btnAtk_Dodge);
+            // 
+            // btnMercy
+            // 
+            this.btnMercy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMercy.Location = new System.Drawing.Point(171, 440);
+            this.btnMercy.Name = "btnMercy";
+            this.btnMercy.Size = new System.Drawing.Size(128, 43);
+            this.btnMercy.TabIndex = 0;
+            this.btnMercy.Text = "Mercy";
+            this.btnMercy.UseVisualStyleBackColor = true;
+            this.btnMercy.Click += new System.EventHandler(this.btnMercy_Mercy);
             // 
             // lblPlayerHealthFull
             // 
@@ -264,6 +276,7 @@
             this.Controls.Add(this.btnAttack1);
             this.Controls.Add(this.btnAttack2);
             this.Controls.Add(this.btnAttack3);
+            this.Controls.Add(this.btnMercy);
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
@@ -291,6 +304,7 @@
     private System.Windows.Forms.Button btnAttack1;
     private System.Windows.Forms.Button btnAttack2;
     private System.Windows.Forms.Button btnAttack3;
+    private System.Windows.Forms.Button btnMercy;
     private System.Windows.Forms.Label lblPlayerHealthFull;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
