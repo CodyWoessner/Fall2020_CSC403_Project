@@ -177,7 +177,7 @@ namespace Fall2020_CSC403_Project
     public void enemyDefeated()
         {
             enemiesDefeated += 1;
-            if(enemiesDefeated == 4)
+            if(enemiesDefeated == 3)
             {
                 PlayerWin();
             }

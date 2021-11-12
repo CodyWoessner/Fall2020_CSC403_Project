@@ -55,13 +55,13 @@ namespace Fall2020_CSC403_Project.code {
       }
     }
 
+        /*
     public void DropItem(Item item)
     {
-      if (InventoryIsEmpty(Equipment) == false)
-      {
-
-      }
-    }
+        if (this.enemyHealth == 0) { 
+            Inventory += inventory.AddItem(Enemy.Item);
+            }
+    }*/
 
     public void EquipItem(Item inputItem, int sourceIndex)
     {

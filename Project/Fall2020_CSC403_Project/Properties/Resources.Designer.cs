@@ -288,5 +288,11 @@ namespace Fall2020_CSC403_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        internal static System.Drawing.Bitmap mrPeanut {
+            get {
+                object obj = ResourceManager.GetObject("mrPeanut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

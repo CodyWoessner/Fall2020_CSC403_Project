@@ -265,7 +265,7 @@
             this.BossBeg.Location = new System.Drawing.Point(515, 371);
             this.BossBeg.Name = "BossBeg";
             this.BossBeg.Size = new System.Drawing.Size(229, 103);
-            this.BossBeg.TabIndex = 13;
+            this.BossBeg.TabIndex = 14;
             this.BossBeg.TabStop = false;
             // 
             // scriptDialogue

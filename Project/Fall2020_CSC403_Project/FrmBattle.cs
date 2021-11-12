@@ -93,12 +93,10 @@ namespace Fall2020_CSC403_Project
 
             if (enemy.Health == 1)
             {
-                BossBeg.Show();
-                scriptDialogue.Show();
                 btnMercy.Visible = true;
                 btnObliterate.Visible = true;
             }
-            else
+            if (enemy.Health > 1)
             {
                 btnAttack1.Visible = true;
                 btnAttack2.Visible = true;
@@ -125,8 +123,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -159,8 +155,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -189,8 +183,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -205,55 +197,43 @@ namespace Fall2020_CSC403_Project
         }
         private void btnMercy_Mercy(object sender, EventArgs e)
         {
-            if (player.Health <= 1)
-            {
-                enemy.OnAttack(+1);
-                instance = null;
-                Close();
-            }
-            else
-            {
-                instance = null;
-                Close();
-            }
+            instance = null;
+            Close();
         }
         private void btnObliterate_Kill(object sender, EventArgs e)
         {
-            if (player.Health > 0)
-            {
-                enemy.OnAttack(-1);
+                player.OnAttack(-1);
                 instance = null;
                 parentForm.enemyDefeated();
                 Close();
-            }
         }
             // updateDialogue function picks a random script of dialogue to show and hides the others
             private void updateDialogue()
             {
-            Random randint = new Random();
-            var scripts = new List<PictureBox>()
-        {
-            script0,script1,script2,script3,script4,script5,BossBeg,scriptDialogue
-        };
-            if (enemy.Health == 1)
+                Random randint = new Random();
+                var scripts = new List<PictureBox>()
             {
-                var i = 7;
-                scripts[i].Show();
-                foreach (var script in scripts)
+                script0,script1,script2,script3,script4,script5,BossBeg,scriptDialogue
+            };
+                if (enemy.Health == 1)
                 {
-                    if (script != scripts[i])
+                    var i = 7;
+                    scripts[i].Show();
+                    foreach (var script in scripts)
                     {
-                        script.Hide();
+                        if (script != scripts[i])
+                        {
+                            script.Hide();
+                        }
                     }
                 }
-            }
-            else
-            {
-                var i = randint.Next(6);
-                scripts[i].Show();
-                foreach (var script in scripts)
+                else
                 {
-                    if (script != scripts[i])
+                    var i = randint.Next(6);
+                    scripts[i].Show();
+                    foreach (var script in scripts)
+                    {
+                        if (script != scripts[i])
                     {
                         script.Hide();
                     }
