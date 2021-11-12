@@ -27,6 +27,8 @@
             this.btnAttack1 = new System.Windows.Forms.Button();
             this.btnAttack2 = new System.Windows.Forms.Button();
             this.btnAttack3 = new System.Windows.Forms.Button();
+            this.btnMercy = new System.Windows.Forms.Button();
+            this.btnObliterate = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +43,7 @@
             this.script3 = new System.Windows.Forms.PictureBox();
             this.script4 = new System.Windows.Forms.PictureBox();
             this.script5 = new System.Windows.Forms.PictureBox();
+            this.BossBeg = new System.Windows.Forms.PictureBox();
             this.scriptDialogue = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
@@ -51,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.script3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.script4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.script5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BossBeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scriptDialogue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +90,28 @@
             this.btnAttack3.Text = "Dodge";
             this.btnAttack3.UseVisualStyleBackColor = true;
             this.btnAttack3.Click += new System.EventHandler(this.btnAtk_Dodge);
+            // 
+            // btnMercy
+            // 
+            this.btnMercy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMercy.Location = new System.Drawing.Point(134, 512);
+            this.btnMercy.Name = "btnMercy";
+            this.btnMercy.Size = new System.Drawing.Size(206, 71);
+            this.btnMercy.TabIndex = 0;
+            this.btnMercy.Text = "Mercy";
+            this.btnMercy.UseVisualStyleBackColor = true;
+            this.btnMercy.Click += new System.EventHandler(this.btnMercy_Mercy);
+            // 
+            // btnObliterate
+            // 
+            this.btnObliterate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObliterate.Location = new System.Drawing.Point(534, 512);
+            this.btnObliterate.Name = "btnObliterate";
+            this.btnObliterate.Size = new System.Drawing.Size(206, 71);
+            this.btnObliterate.TabIndex = 0;
+            this.btnObliterate.Text = "Obliterate";
+            this.btnObliterate.UseVisualStyleBackColor = true;
+            this.btnObliterate.Click += new System.EventHandler(this.btnObliterate_Kill);
             // 
             // lblPlayerHealthFull
             // 
@@ -231,15 +257,25 @@
             this.script5.TabIndex = 13;
             this.script5.TabStop = false;
             // 
+            // BossBeg
+            // 
+            this.BossBeg.BackColor = System.Drawing.Color.Transparent;
+            this.BossBeg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BossBeg.BackgroundImage")));
+            this.BossBeg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BossBeg.Location = new System.Drawing.Point(515, 371);
+            this.BossBeg.Name = "BossBeg";
+            this.BossBeg.Size = new System.Drawing.Size(229, 103);
+            this.BossBeg.TabIndex = 13;
+            this.BossBeg.TabStop = false;
+            // 
             // scriptDialogue
             // 
             this.scriptDialogue.BackColor = System.Drawing.Color.Transparent;
-            this.scriptDialogue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("scriptDialogue.BackgroundImage")));
             this.scriptDialogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.scriptDialogue.Location = new System.Drawing.Point(515, 371);
             this.scriptDialogue.Name = "scriptDialogue";
             this.scriptDialogue.Size = new System.Drawing.Size(229, 103);
-            this.scriptDialogue.TabIndex = 14;
+            this.scriptDialogue.TabIndex = 15;
             this.scriptDialogue.TabStop = false;
             // 
             // FrmBattle
@@ -250,6 +286,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 603);
             this.Controls.Add(this.scriptDialogue);
+            this.Controls.Add(this.BossBeg);
             this.Controls.Add(this.script5);
             this.Controls.Add(this.script4);
             this.Controls.Add(this.script3);
@@ -264,6 +301,8 @@
             this.Controls.Add(this.btnAttack1);
             this.Controls.Add(this.btnAttack2);
             this.Controls.Add(this.btnAttack3);
+            this.Controls.Add(this.btnMercy);
+            this.Controls.Add(this.btnObliterate);
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
@@ -279,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.script3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.script4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.script5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BossBeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scriptDialogue)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,6 +331,8 @@
     private System.Windows.Forms.Button btnAttack1;
     private System.Windows.Forms.Button btnAttack2;
     private System.Windows.Forms.Button btnAttack3;
+    private System.Windows.Forms.Button btnMercy;
+    private System.Windows.Forms.Button btnObliterate;
     private System.Windows.Forms.Label lblPlayerHealthFull;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
@@ -304,6 +346,7 @@
         private System.Windows.Forms.PictureBox script3;
         private System.Windows.Forms.PictureBox script4;
         private System.Windows.Forms.PictureBox script5;
+        private System.Windows.Forms.PictureBox BossBeg;
         private System.Windows.Forms.PictureBox scriptDialogue;
     }
 }

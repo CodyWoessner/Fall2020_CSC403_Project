@@ -32,6 +32,7 @@ namespace Fall2020_CSC403_Project
             script3.Hide();
             script4.Hide();
             script5.Hide();
+            BossBeg.Hide();
         }
         public void Setup()
         {
@@ -40,6 +41,11 @@ namespace Fall2020_CSC403_Project
             picEnemy.Refresh();
             BackColor = enemy.Color;
             picBossBattle.Visible = false;
+            btnAttack1.Visible = false;
+            btnAttack2.Visible = false;
+            btnAttack3.Visible = false;
+            btnMercy.Visible = false;
+            btnObliterate.Visible = false;
 
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
@@ -84,6 +90,20 @@ namespace Fall2020_CSC403_Project
 
             lblPlayerHealthFull.Text = player.Health.ToString();
             lblEnemyHealthFull.Text = enemy.Health.ToString();
+
+            if (enemy.Health == 1)
+            {
+                BossBeg.Show();
+                scriptDialogue.Show();
+                btnMercy.Visible = true;
+                btnObliterate.Visible = true;
+            }
+            else
+            {
+                btnAttack1.Visible = true;
+                btnAttack2.Visible = true;
+                btnAttack3.Visible = true;
+            }
         }
 
         // button attacks start here.
@@ -100,10 +120,23 @@ namespace Fall2020_CSC403_Project
             }
 
             UpdateHealthBars();
-            if (player.Health <= 0 || enemy.Health <= 0)
+            if (enemy.Health <= 0)
+            {
+                btnAttack1.Visible = false;
+                btnAttack2.Visible = false;
+                btnAttack3.Visible = false;
+                scriptDialogue.Show();
+                BossBeg.Show();
+                while (enemy.Health != 1)
+                {
+                    enemy.AlterHealth(+1);
+                }
+                UpdateHealthBars();
+
+            }
+            if (player.Health <= 0)
             {
                 instance = null;
-                parentForm.enemyDefeated();
                 Close();
             }
         }
@@ -121,10 +154,23 @@ namespace Fall2020_CSC403_Project
             }
 
             UpdateHealthBars();
-            if (player.Health <= 0 || enemy.Health <= 0)
+            if (enemy.Health <= 0)
+            {
+                btnAttack1.Visible = false;
+                btnAttack2.Visible = false;
+                btnAttack3.Visible = false;
+                scriptDialogue.Show();
+                BossBeg.Show();
+                while (enemy.Health != 1)
+                {
+                    enemy.AlterHealth(+1);
+                }
+                UpdateHealthBars();
+             
+            }
+            if (player.Health <= 0)
             {
                 instance = null;
-                parentForm.enemyDefeated();
                 Close();
             }
         }
@@ -138,29 +184,80 @@ namespace Fall2020_CSC403_Project
             }
 
             UpdateHealthBars();
-            if (player.Health <= 0 || enemy.Health <= 0)
+            if (enemy.Health <= 0)
             {
+                btnAttack1.Visible = false;
+                btnAttack2.Visible = false;
+                btnAttack3.Visible = false;
+                scriptDialogue.Show();
+                BossBeg.Show();
+                while (enemy.Health != 1)
+                {
+                    enemy.AlterHealth(+1);
+                }
+                UpdateHealthBars();
+            }
+            if (player.Health <= 0)
+            {
+                instance = null;
+                Close();
+            }
+        }
+        private void btnMercy_Mercy(object sender, EventArgs e)
+        {
+            if (player.Health <= 1)
+            {
+                enemy.OnAttack(+1);
+                instance = null;
+                Close();
+            }
+            else
+            {
+                instance = null;
+                Close();
+            }
+        }
+        private void btnObliterate_Kill(object sender, EventArgs e)
+        {
+            if (player.Health > 0)
+            {
+                enemy.OnAttack(-1);
                 instance = null;
                 parentForm.enemyDefeated();
                 Close();
             }
         }
-        // updateDialogue function picks a random script of dialogue to show and hides the others
-        private void updateDialogue()
-        {
+            // updateDialogue function picks a random script of dialogue to show and hides the others
+            private void updateDialogue()
+            {
             Random randint = new Random();
             var scripts = new List<PictureBox>()
         {
-            script0,script1,script2,script3,script4,script5,scriptDialogue
+            script0,script1,script2,script3,script4,script5,BossBeg,scriptDialogue
         };
-            var i = randint.Next(6);
-            scripts[i].Show();
-            foreach (var script in scripts)
+            if (enemy.Health == 1)
             {
-                if (script != scripts[i])
+                var i = 7;
+                scripts[i].Show();
+                foreach (var script in scripts)
                 {
-                    script.Hide();
+                    if (script != scripts[i])
+                    {
+                        script.Hide();
+                    }
                 }
+            }
+            else
+            {
+                var i = randint.Next(6);
+                scripts[i].Show();
+                foreach (var script in scripts)
+                {
+                    if (script != scripts[i])
+                    {
+                        script.Hide();
+                    }
+                }   
             }
         }
 
@@ -182,5 +279,9 @@ namespace Fall2020_CSC403_Project
             tmrFinalBattle.Enabled = false;
         }
 
+        private void BossBeg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
