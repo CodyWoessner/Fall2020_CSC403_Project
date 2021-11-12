@@ -13,11 +13,13 @@ namespace Fall2020_CSC403_Project
         public static FrmBattle instance = null;
         private Enemy enemy;
         private Player player;
+        public FrmLevel parentForm = null;
 
         private FrmBattle()
         {
             InitializeComponent();
             InitDialogue();// Initialize the dialogue
+            
             player = Game.player;
         }
         // InitDialogue function shows the script dialogue then hides the scripts
@@ -52,11 +54,12 @@ namespace Fall2020_CSC403_Project
             picBossBattle.Location = Point.Empty;
             picBossBattle.Size = ClientSize;
             picBossBattle.Visible = true;
-
+            scriptDialogue.Hide();
             SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
             simpleSound.Play();
 
             tmrFinalBattle.Enabled = true;
+
         }
 
         public static FrmBattle GetInstance(Enemy enemy)
@@ -90,7 +93,7 @@ namespace Fall2020_CSC403_Project
         {
             // updates the dialogue
             updateDialogue();
-            player.OnAttack(-2);
+            player.OnAttack(-5);
             if (enemy.Health > 0)
             {
                 enemy.OnAttack(-2);
@@ -100,6 +103,7 @@ namespace Fall2020_CSC403_Project
             if (player.Health <= 0 || enemy.Health <= 0)
             {
                 instance = null;
+                parentForm.enemyDefeated();
                 Close();
             }
         }
@@ -110,16 +114,17 @@ namespace Fall2020_CSC403_Project
             // updates the dialogue
             updateDialogue();
 
-            player.OnAttack(-4);
+            player.OnAttack(-8);
             if (enemy.Health > 0)
             {
-                enemy.OnAttack(-3);
+                enemy.OnAttack(-2);
             }
 
             UpdateHealthBars();
             if (player.Health <= 0 || enemy.Health <= 0)
             {
                 instance = null;
+                parentForm.enemyDefeated();
                 Close();
             }
         }
@@ -136,6 +141,7 @@ namespace Fall2020_CSC403_Project
             if (player.Health <= 0 || enemy.Health <= 0)
             {
                 instance = null;
+                parentForm.enemyDefeated();
                 Close();
             }
         }
@@ -172,6 +178,7 @@ namespace Fall2020_CSC403_Project
         private void tmrFinalBattle_Tick(object sender, EventArgs e)
         {
             picBossBattle.Visible = false;
+            scriptDialogue.Show();
             tmrFinalBattle.Enabled = false;
         }
 

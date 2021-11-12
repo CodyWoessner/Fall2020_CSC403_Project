@@ -18,6 +18,9 @@ namespace Fall2020_CSC403_Project
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private FrmInventory playerInventory;
+    private FrmHighscore frmhighscore;
+    private String time;
+    private int enemiesDefeated = 0;
 
     public FrmLevel()
     {
@@ -106,17 +109,17 @@ namespace Fall2020_CSC403_Project
     private void tmrUpdateInGameTime_Tick(object sender, EventArgs e)
     {
       TimeSpan span = DateTime.Now - timeBegin;
-      string time = span.ToString(@"hh\:mm\:ss");
+      time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
+
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e)
     {
       // move player
       player.Move();
-
-      // check collision with walls
-      if (HitAWall(player))
+            // check collision with walls
+            if (HitAWall(player))
       {
         player.MoveBack();
       }
@@ -164,13 +167,26 @@ namespace Fall2020_CSC403_Project
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
       frmBattle.Show();
-
+      frmBattle.parentForm = this;
       if (enemy == bossKoolaid)
       {
         frmBattle.SetupForBossBattle();
       }
-    }
 
+    }
+    public void enemyDefeated()
+        {
+            enemiesDefeated += 1;
+            if(enemiesDefeated == 3)
+            {
+                PlayerWin();
+            }
+        }
+    private void PlayerWin()
+        {
+            frmhighscore = FrmHighscore.GetInstance(time);
+            frmhighscore.Show();
+        }
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
     {
       switch (e.KeyCode)
