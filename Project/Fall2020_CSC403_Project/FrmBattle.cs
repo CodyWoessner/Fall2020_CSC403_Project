@@ -252,7 +252,7 @@ namespace Fall2020_CSC403_Project
         }
         private void btnObliterate_Kill(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             player.OnAttack(-1); 
             instance = null; 
             parentForm.enemyDefeated(); 
@@ -280,12 +280,12 @@ namespace Fall2020_CSC403_Project
 
             UpdateHealthBars();
             
-=======
+
                 player.OnAttack(-1);
                 instance = null;
                 parentForm.enemyDefeated();
                 Close();
->>>>>>> 6af94378cc6714a6037b123e1a41d077687f5e8a
+
         }
             // updateDialogue function picks a random script of dialogue to show and hides the others
             private void updateDialogue()
