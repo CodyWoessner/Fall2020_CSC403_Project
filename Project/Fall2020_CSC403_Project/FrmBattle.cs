@@ -13,7 +13,14 @@ namespace Fall2020_CSC403_Project
         public static FrmBattle instance = null;
         private Enemy enemy;
         private Player player;
+        bool burn = false;
+        Random RNG = new Random();
         public FrmLevel parentForm = null;
+
+        public FrmBattle(bool burn)
+        {
+            this.burn = burn;
+        }
 
         private FrmBattle()
         {
@@ -47,6 +54,15 @@ namespace Fall2020_CSC403_Project
             btnMercy.Visible = false;
             btnObliterate.Visible = false;
 
+            bool Status = false;
+            
+            // add current weapons effects
+            this.btnAttack4.Visible = false;
+            // this.btnAttack4.Visible = true;
+            if (player.Inventory[2].ItemType == "cheeto_knives") 
+            {
+                this.btnAttack4.Visible = true;
+            }
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
             player.AttackEvent += EnemyDamage;
@@ -102,6 +118,11 @@ namespace Fall2020_CSC403_Project
                 btnAttack2.Visible = true;
                 btnAttack3.Visible = true;
             }
+            /*if (player.Health <= 0 || enemy.Health <= 0)
+            {
+                instance = null;
+                Close();
+            }*/
         }
 
         // button attacks start here.
@@ -111,8 +132,18 @@ namespace Fall2020_CSC403_Project
         {
             // updates the dialogue
             updateDialogue();
-            player.OnAttack(-5);
-            if (enemy.Health > 0)
+
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
+            {
+                player.OnAttack(-3);
+            }
+
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+
+
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 0)
             {
                 enemy.OnAttack(-2);
             }
@@ -143,10 +174,24 @@ namespace Fall2020_CSC403_Project
             // updates the dialogue
             updateDialogue();
 
-            player.OnAttack(-8);
-            if (enemy.Health > 0)
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
             {
-                enemy.OnAttack(-2);
+                // Try to "Crit' dealing massive damage
+                if (RNG.Next(1, 11) > 9)
+                {
+                    player.OnAttack(-10);
+                }
+                else
+                {
+                    player.OnAttack(-1);
+                }
+            }
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 1)
+            {
+                enemy.OnAttack(-4);
             }
 
             UpdateHealthBars();
@@ -171,8 +216,13 @@ namespace Fall2020_CSC403_Project
 
         //Attack Dodge
         private void btnAtk_Dodge(object sender, EventArgs e)
-        { 
-            if (enemy.Health > 0)
+        {
+            player.OnAttack(0);
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+
+            // See if enemies's attack hits
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 9)
             {
                 enemy.OnAttack(-2);
             }
@@ -202,10 +252,40 @@ namespace Fall2020_CSC403_Project
         }
         private void btnObliterate_Kill(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            player.OnAttack(-1); 
+            instance = null; 
+            parentForm.enemyDefeated(); 
+            Close();
+        }
+
+        //Attack Burn
+        private void btnAtk_Burn(object sender, EventArgs e)
+        {
+            // updates the dialogue
+            updateDialogue();
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
+            {
+                player.OnAttack(-2);
+                this.burn = BurnDmg(true);
+            }
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 1)
+            {
+                enemy.OnAttack(-1);
+                instance = null;
+                parentForm.enemyDefeated();
+                Close();
+            }
+
+            UpdateHealthBars();
+            
+=======
                 player.OnAttack(-1);
                 instance = null;
                 parentForm.enemyDefeated();
                 Close();
+>>>>>>> 6af94378cc6714a6037b123e1a41d077687f5e8a
         }
             // updateDialogue function picks a random script of dialogue to show and hides the others
             private void updateDialogue()
@@ -241,6 +321,18 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        private bool BurnDmg(bool burn)
+        {
+            if (enemy.Health > 0 && burn == true)
+            {
+                EnemyDamage(-2);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void EnemyDamage(int amount)
         {
