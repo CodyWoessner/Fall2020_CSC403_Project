@@ -67,7 +67,7 @@ namespace Fall2020_CSC403_Project
         private void writeHighscoreData()
         {
             //NOTE you must set this path to the path of the highscores.dat file in the project before starting game else the highscores will not be written
-            StreamWriter strWriter = new StreamWriter(@"C:\Users\owner\Source\Repos\Fall2020_CSC403_Project\Project\Fall2020_CSC403_Project\data\HighScores\HighScores.dat");
+            StreamWriter strWriter = new StreamWriter(@"C:\Users\Zoe Semifero\Source\Repos\CodyWoessner\Fall2020_CSC403_Project\Project\Fall2020_CSC403_Project\data\HighScores\Highscores.dat");
             for(int i = 0; i <= highscoreData.Count-1; i++)
             {
                 if (i<=5)
