@@ -56,13 +56,13 @@ namespace Fall2020_CSC403_Project
       itemList[6] = new Legs("leggings", "Mr. Peanut's Leggings", global::Fall2020_CSC403_Project.Properties.Resources.leggings, "Form fitting.");
 
       player.Equipment[0] = itemList[3];
-      player.Equipment[1] = itemList[2];
+      player.Equipment[1] = itemList[1];
       player.Equipment[2] = itemList[5];
       player.Equipment[3] = itemList[0];
       player.Equipment[4] = itemList[6];
       player.Equipment[5] = itemList[4];
 
-      player.Inventory[0] = itemList[0];
+      player.Inventory[0] = itemList[2];
       player.Inventory[1] = itemList[0];
       player.Inventory[2] = itemList[0];
       player.Inventory[3] = itemList[0];
@@ -177,7 +177,7 @@ namespace Fall2020_CSC403_Project
     public void enemyDefeated()
         {
             enemiesDefeated += 1;
-            if(enemiesDefeated == 4)
+            if(enemiesDefeated == 3)
             {
                 PlayerWin();
             }

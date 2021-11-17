@@ -8,8 +8,8 @@ using Fall2020_CSC403_Project;
 namespace Fall2020_CSC403_Project {
     public partial class FrmMenu : Form
     {
-        public bool tester { get; private set; }
-        private FrmLevel frmLevel;
+        public bool start { get; private set; }
+        public bool stop { get; private set; }
         public static FrmMenu instance = null;
         public FrmMenu()
         {
@@ -20,16 +20,15 @@ namespace Fall2020_CSC403_Project {
         {
             // play button
             instance = null;
-            tester = true;
+            start = true;
             Close();
-            //frmLevel = FrmLevel.FrmLevel_Load(sender, e);
-            //frmLevel.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             // quit button
             instance = null;
+            stop = true;
             Close();
         }
     }
@@ -44,10 +43,14 @@ namespace Fall2020_CSC403_Project {
       FrmMenu frmmenu = new FrmMenu();
       Application.Run(frmmenu);
 
-      if (frmmenu.tester)
+      if (frmmenu.start)
         {
             Application.Run(new FrmLevel());
         }
+      if (frmmenu.stop)
+            {
+                
+            }    
       else
             {
                 Application.Run(new FrmMenu());

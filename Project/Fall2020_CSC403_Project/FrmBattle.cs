@@ -13,7 +13,14 @@ namespace Fall2020_CSC403_Project
         public static FrmBattle instance = null;
         private Enemy enemy;
         private Player player;
+        bool burn = false;
+        Random RNG = new Random();
         public FrmLevel parentForm = null;
+
+        public FrmBattle(bool burn)
+        {
+            this.burn = burn;
+        }
 
         private FrmBattle()
         {
@@ -47,6 +54,15 @@ namespace Fall2020_CSC403_Project
             btnMercy.Visible = false;
             btnObliterate.Visible = false;
 
+            bool Status = false;
+            
+            // add current weapons effects
+            this.btnAttack4.Visible = false;
+            // this.btnAttack4.Visible = true;
+            if (player.Inventory[2].ItemType == "cheeto_knives") 
+            {
+                this.btnAttack4.Visible = true;
+            }
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
             player.AttackEvent += EnemyDamage;
@@ -93,17 +109,20 @@ namespace Fall2020_CSC403_Project
 
             if (enemy.Health == 1)
             {
-                BossBeg.Show();
-                scriptDialogue.Show();
                 btnMercy.Visible = true;
                 btnObliterate.Visible = true;
             }
-            else
+            if (enemy.Health > 1)
             {
                 btnAttack1.Visible = true;
                 btnAttack2.Visible = true;
                 btnAttack3.Visible = true;
             }
+            /*if (player.Health <= 0 || enemy.Health <= 0)
+            {
+                instance = null;
+                Close();
+            }*/
         }
 
         // button attacks start here.
@@ -113,8 +132,18 @@ namespace Fall2020_CSC403_Project
         {
             // updates the dialogue
             updateDialogue();
-            player.OnAttack(-5);
-            if (enemy.Health > 0)
+
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
+            {
+                player.OnAttack(-3);
+            }
+
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+
+
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 0)
             {
                 enemy.OnAttack(-2);
             }
@@ -125,8 +154,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -147,10 +174,24 @@ namespace Fall2020_CSC403_Project
             // updates the dialogue
             updateDialogue();
 
-            player.OnAttack(-8);
-            if (enemy.Health > 0)
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
             {
-                enemy.OnAttack(-2);
+                // Try to "Crit' dealing massive damage
+                if (RNG.Next(1, 11) > 9)
+                {
+                    player.OnAttack(-10);
+                }
+                else
+                {
+                    player.OnAttack(-1);
+                }
+            }
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 1)
+            {
+                enemy.OnAttack(-4);
             }
 
             UpdateHealthBars();
@@ -159,8 +200,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -177,8 +216,13 @@ namespace Fall2020_CSC403_Project
 
         //Attack Dodge
         private void btnAtk_Dodge(object sender, EventArgs e)
-        { 
-            if (enemy.Health > 0)
+        {
+            player.OnAttack(0);
+            // deals damage if burnAtk has been used
+            bool burn = BurnDmg(this.burn);
+
+            // See if enemies's attack hits
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 9)
             {
                 enemy.OnAttack(-2);
             }
@@ -189,8 +233,6 @@ namespace Fall2020_CSC403_Project
                 btnAttack1.Visible = false;
                 btnAttack2.Visible = false;
                 btnAttack3.Visible = false;
-                scriptDialogue.Show();
-                BossBeg.Show();
                 while (enemy.Health != 1)
                 {
                     enemy.AlterHealth(+1);
@@ -205,55 +247,73 @@ namespace Fall2020_CSC403_Project
         }
         private void btnMercy_Mercy(object sender, EventArgs e)
         {
-            if (player.Health <= 1)
-            {
-                enemy.OnAttack(+1);
-                instance = null;
-                Close();
-            }
-            else
-            {
-                instance = null;
-                Close();
-            }
+            instance = null;
+            Close();
         }
         private void btnObliterate_Kill(object sender, EventArgs e)
         {
-            if (player.Health > 0)
+
+            player.OnAttack(-1); 
+            instance = null; 
+            parentForm.enemyDefeated(); 
+            Close();
+        }
+
+        //Attack Burn
+        private void btnAtk_Burn(object sender, EventArgs e)
+        {
+            // updates the dialogue
+            updateDialogue();
+            // See if player's attack hits
+            if (RNG.Next(1, 11) > 1)
+            {
+                player.OnAttack(-2);
+                this.burn = BurnDmg(true);
+            }
+            if (enemy.Health > 0 && RNG.Next(1, 11) > 1)
             {
                 enemy.OnAttack(-1);
                 instance = null;
                 parentForm.enemyDefeated();
                 Close();
             }
+
+            UpdateHealthBars();
+            
+
+                player.OnAttack(-1);
+                instance = null;
+                parentForm.enemyDefeated();
+                Close();
+
         }
             // updateDialogue function picks a random script of dialogue to show and hides the others
             private void updateDialogue()
             {
-            Random randint = new Random();
-            var scripts = new List<PictureBox>()
-        {
-            script0,script1,script2,script3,script4,script5,BossBeg,scriptDialogue
-        };
-            if (enemy.Health == 1)
+                Random randint = new Random();
+                var scripts = new List<PictureBox>()
             {
-                var i = 7;
-                scripts[i].Show();
-                foreach (var script in scripts)
+                script0,script1,script2,script3,script4,script5,BossBeg,scriptDialogue
+            };
+                if (enemy.Health == 1)
                 {
-                    if (script != scripts[i])
+                    var i = 7;
+                    scripts[i].Show();
+                    foreach (var script in scripts)
                     {
-                        script.Hide();
+                        if (script != scripts[i])
+                        {
+                            script.Hide();
+                        }
                     }
                 }
-            }
-            else
-            {
-                var i = randint.Next(6);
-                scripts[i].Show();
-                foreach (var script in scripts)
+                else
                 {
-                    if (script != scripts[i])
+                    var i = randint.Next(6);
+                    scripts[i].Show();
+                    foreach (var script in scripts)
+                    {
+                        if (script != scripts[i])
                     {
                         script.Hide();
                     }
@@ -261,6 +321,18 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        private bool BurnDmg(bool burn)
+        {
+            if (enemy.Health > 0 && burn == true)
+            {
+                EnemyDamage(-2);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void EnemyDamage(int amount)
         {

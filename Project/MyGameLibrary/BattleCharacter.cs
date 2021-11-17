@@ -28,9 +28,9 @@ namespace Fall2020_CSC403_Project.code {
       Equipment = new Item [EQUIPMENT_SIZE]; // 6 slots for items that are equipped
     }
 
-    public void OnAttack(int amount) {
+    public void OnAttack(int amount)
+    {
       AttackEvent((int)(amount * strength));
-      // get weapon effect
     }
 
     public void AlterHealth(int amount) {
@@ -55,13 +55,13 @@ namespace Fall2020_CSC403_Project.code {
       }
     }
 
+        /*
     public void DropItem(Item item)
     {
-      if (InventoryIsEmpty(Equipment) == false)
-      {
-
-      }
-    }
+        if (this.enemyHealth == 0) { 
+            Inventory += inventory.AddItem(Enemy.Item);
+            }
+    }*/
 
     public void EquipItem(Item inputItem, int sourceIndex)
     {
